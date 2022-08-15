@@ -32,7 +32,7 @@ def git_clone():
     print("generate_full")
 
     print("Update completed")
-    os.system("cp bytecode.cvd /usr/src/web && cp main.cvd /usr/src/web && cp daily.cvd /usr/src/web")
+    os.system("cp bytecode.cvd /home/app-user/clamav-data && cp main.cvd /home/app-user/clamav-data && cp daily.cvd /home/app-user/clamav-data")
 
 
 

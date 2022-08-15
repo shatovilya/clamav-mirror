@@ -42,7 +42,7 @@ def keep_updating():
         print("Performing update!")
         git_clone()
         print("Update completed")
-        time.sleep(60 * 1 * EVERY_N_HOURS)
+        time.sleep(60 * 60 * EVERY_N_HOURS)
 
 if __name__ == "__main__":
     print("Performing initial update")

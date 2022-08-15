@@ -19,7 +19,7 @@ def git_clone():
     os.system(command_clone)
 
     print("Download completed")
-    command_generate_main="main.cvd.01 main.cvd.02 main.cvd.03 main.cvd.04 main.cvd.05 main.cvd.06 main.cvd.07 main.cvd.08 main.cvd.09 main.cvd.10 > main.cvd"
+    command_generate_main="cat main.cvd.01 main.cvd.02 main.cvd.03 main.cvd.04 main.cvd.05 main.cvd.06 main.cvd.07 main.cvd.08 main.cvd.09 main.cvd.10 > main.cvd"
     os.system(command_generate_main)
     print("generate_main")
     

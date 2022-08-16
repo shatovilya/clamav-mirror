@@ -1,0 +1,36 @@
+version: '3.7'
+
+x-log: &logging
+  logging:
+    driver: "json-file"
+    options:
+      max-size: "10m"
+      max-file: "10"
+
+services:
+  clamav-mirror:
+      <<: *logging  
+      build:
+        context: ./
+      deploy:
+        resources:
+          limits:
+            cpus: '0.4'
+            memory: 1Gb
+          reservations:
+            memory: 100M
+      container_name: clamav-mirror
+      env_file:
+        - ./.env
+      restart: ${RESTART_POLICY}
+      security_opt:
+        - no-new-privileges:true
+      volumes:
+          - /etc/timezone:/etc/timezone:ro
+          - /etc/localtime:/etc/localtime:ro
+          - data:/home/app-user/clamav-data
+      ports:
+        -  ${WEB_PORT}:80
+
+volumes:
+  data:

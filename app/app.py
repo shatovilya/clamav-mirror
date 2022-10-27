@@ -34,7 +34,10 @@ def git_clone():
     print("Update completed")
     os.system("cp bytecode.cvd /home/app-user/clamav-data && cp main.cvd /home/app-user/clamav-data && cp daily.cvd /home/app-user/clamav-data")
 
+def remove_cvd():
 
+    os.system("rm -f /home/app-user/clamav-data/bytecode.cvd && rm -f /home/app-user/clamav-data/main.cvd && rm -f /home/app-user/clamav-data/daily.cvd")
+    print("Remove old database")
 
 def keep_updating():
     '''Updating ClamAV databases cyclically'''
@@ -43,7 +46,8 @@ def keep_updating():
         git_clone()
         print("Update completed")
         time.sleep(60 * 60 * EVERY_N_HOURS)
-
+        remove_cvd()
+        
 if __name__ == "__main__":
     print("Performing initial update")
     t = threading.Thread(target=git_clone)

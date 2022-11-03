@@ -42,7 +42,7 @@ cp ./.env_template ./.env
 Production
 
 ```bash
-docker-compose -f docker-compose_cloud_DB up -d
+docker-compose -f docker-compose.yaml up -d
 
 ```
 

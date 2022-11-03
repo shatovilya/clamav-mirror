@@ -1,3 +1,4 @@
+"""clamav-mirror-docker"""
 import threading
 import logging
 import os

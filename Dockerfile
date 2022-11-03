@@ -28,7 +28,7 @@ RUN pip3 install --no-cache-dir wheel && \
     pip3 install --no-cache-dir -r /requirements.txt
 
 ############################################# 2 STAGE #############################################
-FROM ubuntu:latest AS runner-image
+FROM ubuntu:22.04 AS runner-image
 ARG REQUIREMENTS_PATH
 ARG PORT_WEB_MIRROR
 ARG PORT_WEB_EXPORTER

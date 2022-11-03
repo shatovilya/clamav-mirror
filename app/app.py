@@ -49,7 +49,7 @@ def keep_updating():
         remove_cvd()
         
 if __name__ == "__main__":
-    logging.basicConfig(filename='/home/app-user/clamav_mirror.log', level=logging.INFO)
+    logging.basicConfig(level=os.environ.get("LOGLEVEL", "INFO"))
     logging.info("Performing initial update")
     t = threading.Thread(target=git_clone)
     t.start()

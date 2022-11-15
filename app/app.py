@@ -36,7 +36,6 @@ def git_clone():
     os.system(command_generate_full)
     logging.info("generate_full")
 
-    logging.info("Update completed")
     os.system("cp bytecode.cvd /home/app-user/clamav-data &&   \
                 cp main.cvd /home/app-user/clamav-data &&   \
                 cp daily.cvd /home/app-user/clamav-data")

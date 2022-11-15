@@ -63,7 +63,7 @@ def keep_updating():
 if __name__ == "__main__":
     logging.basicConfig(level=os.environ.get("LOGLEVEL", "INFO"))
     logging.info("Performing initial update")
-    t = threading.Thread(target=git_clone)
+    t = threading.Thread(target=keep_updating)
     t.start()
 
     logging.info("Starting web server")
